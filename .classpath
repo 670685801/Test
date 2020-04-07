@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="jtest"/>
+	<classpathentry kind="lib" path="jar/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="jar/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="jar/junit-4.7.jar"/>
+	<classpathentry kind="lib" path="jar/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="jar/spring-aop-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="jar/spring-beans-3.2.4.RELEASE.jar" sourcepath="E:/STUDY/Develop/spring-framework-3.2.4.RELEASE/libs/spring-beans-3.2.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="jar/spring-context-3.2.4.RELEASE.jar" sourcepath="D:/A_WORK/spring-framework-3.2.4.RELEASE/libs/spring-context-3.2.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="jar/spring-context-support-3.2.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="jar/spring-core-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="jar/spring-expression-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

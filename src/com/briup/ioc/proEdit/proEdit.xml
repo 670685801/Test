@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	
+   <!-- 当遇到String类型转为Address类型的时候，需要使用AdressEditor进行类型转换 -->
+  <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+  <property name="customEditors">
+    <map>
+    <!-- key:String类型要转换的对象类型 value：属性编辑器 -->
+      <entry key="com.briup.ioc.proEdit.Address" value="com.briup.ioc.proEdit.AddressEditor"/>
+    </map>
+  </property>
+  </bean>
+  
+	<bean name="stu" class="com.briup.ioc.proEdit.Student">
+	  <property name="id" value="1"></property>
+	  <property name="name" value="tom"></property>
+	  <property name="age" value="22"></property>
+	  <property name="gender" value="true"></property>
+	  <property name="address" value="kunshan,xueyuan,china" ></property>
+	</bean>
+</beans>

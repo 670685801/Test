@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		    xmlns:context="http://www.springframework.org/schema/context"
+		    xsi:schemaLocation="
+   http://www.springframework.org/schema/beans 
+   http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+   <!-- <context:annotation-config></context:annotation-config> -->
+   <!-- 扫描指定包下得类，检查是否使用相关注解
+        这个标签可以代替之前 使用得<context:annotation-config>
+    -->
+   <context:component-scan base-package="com.briup.ioc.annotation"></context:component-scan>
+   
+  <!--  <bean name="car" class="com.briup.ioc.annotation.Car">
+      <property name="name" value="BM"></property>
+      <property name="price" value="800000"></property>   
+   </bean>
+   <bean name="car2" class="com.briup.ioc.annotation.Car">
+      <property name="name" value="aodi"></property>
+      <property name="price" value="900000"></property>   
+   </bean> -->
+   
+  <!--  <bean name="office" class="com.briup.ioc.annotation.Office">
+      <property name="num" value="002"></property>
+   </bean>   -->
+   
+   <!--  <bean name="boss" class="com.briup.ioc.annotation.Boss">
+      <property name="name" value="zm"></property>
+      <property name="car" ref="car"></property> 
+    <property name="office" ref="office"></property>
+   </bean> -->
+	
+</beans>

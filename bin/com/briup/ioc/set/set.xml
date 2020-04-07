@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+    <!-- 注入一个bean的实例 -->
+    <bean name="ypf" class="com.briup.bean.Student" >
+        <property name="id" value="1"></property>
+        <property name="name" value="yupengfei"></property>
+        <property name="age" value="22"></property>
+    </bean>
+    <!-- 注入一个bean的另一个实例 -->
+    <bean name="ch" class="com.briup.bean.Student" >
+        <property name="id" value="1"></property>
+        <property name="name" value="chenghe"></property>
+        <property name="age" value="22"></property>
+    </bean>
+     <!-- 起别名 -->
+    <alias name="ypf" alias="ff"/>
+    <!-- 注入一个对象的实例对象的三种方式 -->
+	<!-- <bean name="lc" class="com.briup.bean.Teacher">
+	   <property name="id" value="1"></property>
+	   <property name="name" value="liucong"></property>
+	   <property name="student" ref="ypf"></property>
+	</bean> -->
+	<!-- 如何注入一个对象的多个实例对象？一会讲 -->
+	<bean name="lc" class="com.briup.bean.Teacher">
+	   <property name="id" value="1"></property>
+	   <property name="name" value="liucong"></property>
+	   <property name="student" >
+           	 <!-- <ref local="ff"/>   -->
+           	 <ref bean="ch"/>
+	   </property>
+	</bean>
+	
+	<!-- id 与name的区别 -->
+	 <bean id="5" class="com.briup.bean.Student" ></bean> 
+	 <!-- <bean name="s5" class="com.briup.bean.Student" ></bean> -->
+	 <bean name="s7" class="com.briup.bean.Student" ></bean>
+	
+	
+    <!--  <bean name="s5 s6" class="com.briup.bean.Student" ></bean> -->
+     <bean id="s5 s6" class="com.briup.bean.Student" ></bean>
+    
+    
+    <!-- 知识点1:
+    	spring容器怎么管理我们配置的对象:
+    		默认情况下,spring容器用单例的模式来管理这些对象.
+    		通过相同的一个对象名字,多次在容器中拿对象,每一次
+    		拿到的都是 相同的 对象(单例)
+    		
+    		通过配置,我们可以让spring容器用非单例的模式来管理这个对象.	
+    		通过相同的一个对象名字,多次在容器中拿对象,每一次
+    		拿到的都是 不同的 对象(非单例)
+    		在bean标签中加入属性scope="prototype"
+     -->
+    <!-- 知识点2
+    	<bean name="teacher" class="..."> 
+    		name属性的值是自己随便起的
+    		class属性的值表示这里要配置的是哪一个类的对象
+    		
+    	<property name="student" ref="student">
+    		name属性的值表示一个方法,这里表示的是setStudent方法
+    		ref属性表示调用这个setStudent方法的时候要用的参数是名字为student的对象
+     -->
+    <!-- 知识点3
+    	 可以给某一个对象起一个别名: 
+    	 这个时候,不管用student还是用s1,这个俩个名字都是
+    	 指向的同一个Student类型的对象
+    	 <bean name="student" class="com.briup.bean.Student"></bean>
+    	 <alias name="student" alias="s1"/>
+    -->
+    <!--知识点4
+    	可以给一个类配置多个对象,对象的名字要不同 
+    -->
+    <!--知识点5 
+    	bean标签里面的id和name属性都可以用来标识这个配置的对象,	 
+           （1）不管是标识符，还是别名，在容器中必需唯一。
+                    因为标识符和别名，都是可以用来获取bean的，如果不唯一，
+                   显然不知道获取的到底是哪一个bean。
+           （2）标识符和别名没有任何区别，id和name属性唯一的差别在于：
+           id只能设置一个值，而name可以设置多个值。
+     -->
+    
+</beans>
